@@ -1,6 +1,7 @@
-import 'package:bloc_weather/models/models.dart';
-import 'package:bloc_weather/repository/repository.dart';
 import 'package:flutter/foundation.dart';
+
+import '../models/models.dart';
+import 'repository.dart';
 
 class WeatherRepository {
   final WeatherApiClient weatherApiClient;

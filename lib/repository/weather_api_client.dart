@@ -1,8 +1,9 @@
 import 'dart:convert';
 
-import 'package:bloc_weather/models/models.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
+
+import '../models/models.dart';
 
 class WeatherApiClient {
   final http.Client httpClient;
