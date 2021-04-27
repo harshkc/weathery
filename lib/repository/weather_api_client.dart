@@ -11,7 +11,7 @@ class WeatherApiClient {
 
   WeatherApiClient({@required this.httpClient}) : assert(httpClient != null);
 
-  Future<String> getLocationId(String city) async {
+  Future<int> getLocationId(String city) async {
     final locationUrl = baseUrl + '/api/location/search/?query=$city';
     final locationResponse = await this.httpClient.get(Uri.parse(locationUrl));
 
@@ -23,7 +23,7 @@ class WeatherApiClient {
     return (locationJsonMap.first)['woeid'];
   }
 
-  Future<Weather> getWeatherReport(String woeid) async {
+  Future<Weather> getWeatherReport(int woeid) async {
     final weatherReportUrl = baseUrl + '/api/location/$woeid/';
 
     final weatherResponse =

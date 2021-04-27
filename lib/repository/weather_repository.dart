@@ -10,7 +10,7 @@ class WeatherRepository {
   }) : assert(weatherApiClient != null);
 
   Future<Weather> fetchWeather(String city) async {
-    final String woeid = await weatherApiClient.getLocationId(city);
+    final int woeid = await weatherApiClient.getLocationId(city);
 
     return weatherApiClient.getWeatherReport(woeid);
   }
