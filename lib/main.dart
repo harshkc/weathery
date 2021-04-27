@@ -2,11 +2,12 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
-import 'package:bloc_weather/app/app.dart';
-import 'package:bloc_weather/app/app_bloc_observer.dart';
-import 'package:bloc_weather/repository/repository.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+
+import 'app/app.dart';
+import 'app/app_bloc_observer.dart';
+import 'repository/repository.dart';
 
 void main() {
   Bloc.observer = AppBlocObserver();

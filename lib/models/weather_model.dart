@@ -1,5 +1,6 @@
-import 'package:bloc_weather/constants/enums.dart';
 import 'package:equatable/equatable.dart';
+
+import '../constants/enums.dart';
 
 class Weather extends Equatable {
   final WeatherCondition condition;

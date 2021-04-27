@@ -4,8 +4,8 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 
-import 'package:bloc_weather/models/models.dart';
-import 'package:bloc_weather/repository/repository.dart';
+import '../models/models.dart';
+import '../repository/repository.dart';
 
 part 'weather_event.dart';
 part 'weather_state.dart';
