@@ -7,7 +7,8 @@ import 'package:http/http.dart' as http;
 
 import 'app/app.dart';
 import 'app/app_bloc_observer.dart';
-import 'repository/repository.dart';
+import 'weather/repository/weather_api_client.dart';
+import 'weather/repository/weather_repository.dart';
 
 void main() {
   Bloc.observer = AppBlocObserver();

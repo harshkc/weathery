@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../repository/repository.dart';
-import '../widgets/widgets.dart';
+import '../weather/repository/repository.dart';
+import '../weather/widgets/weather.dart';
 
 class App extends StatelessWidget {
   final WeatherRepository weatherRepository;
