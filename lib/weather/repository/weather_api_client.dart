@@ -20,7 +20,7 @@ class WeatherApiClient {
     }
     final locationJsonMap = jsonDecode(locationResponse.body) as List;
 
-    return (locationJsonMap.first)['woeid'];
+    return locationJsonMap.length > 0 ? (locationJsonMap.first)['woeid'] : -1;
   }
 
   Future<Weather> getWeatherReport(int woeid) async {
