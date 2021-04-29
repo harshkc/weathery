@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:bloc_weather/settings/settings.dart';
 import 'package:bloc_weather/theme/bloc/theme_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -36,6 +37,11 @@ class _WeatherState extends State<Weather> {
       appBar: AppBar(
         title: Text('Flutter Weather'),
         actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.settings),
+            onPressed: () => Navigator.push(
+                context, MaterialPageRoute(builder: (_) => Settings())),
+          ),
           IconButton(
             icon: Icon(Icons.search),
             onPressed: () async {
