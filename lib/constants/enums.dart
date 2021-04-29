@@ -11,3 +11,5 @@ enum WeatherCondition {
   clear,
   unknown
 }
+
+enum TemperatureUnit { fahrenheit, celsius }

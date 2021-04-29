@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 
-import '../../constants/enums.dart';
+import '../../constants/constants.dart';
+import '../../settings/settings.dart';
 import '../models/models.dart' as model;
 
 class CombinedWeatherTemperature extends StatelessWidget {
@@ -24,13 +26,18 @@ class CombinedWeatherTemperature extends StatelessWidget {
               padding: EdgeInsets.all(20.0),
               child: WeatherConditions(condition: weather.condition),
             ),
-            Padding(
-              padding: EdgeInsets.all(20.0),
-              child: Temperature(
-                temperature: weather.temp,
-                high: weather.maxTemp,
-                low: weather.minTemp,
-              ),
+            BlocBuilder<SettingBloc, SettingState>(
+              builder: (context, state) {
+                return Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: Temperature(
+                    temperature: weather.temp,
+                    high: weather.maxTemp,
+                    low: weather.minTemp,
+                    temperatureUnit: state.temperatureUnit,
+                  ),
+                );
+              },
             ),
           ],
         ),
@@ -94,12 +101,14 @@ class Temperature extends StatelessWidget {
   final double temperature;
   final double low;
   final double high;
+  final TemperatureUnit temperatureUnit;
 
   Temperature({
     Key key,
     this.temperature,
     this.low,
     this.high,
+    this.temperatureUnit,
   }) : super(key: key);
 
   @override
@@ -141,5 +150,8 @@ class Temperature extends StatelessWidget {
     );
   }
 
-  int _formattedTemperature(double t) => t.round();
+  int _toFahrenheit(double t) => ((9 * t / 5) + 32).round();
+
+  int _formattedTemperature(double t) =>
+      temperatureUnit == TemperatureUnit.celsius ? _toFahrenheit(t) : t.round();
 }
