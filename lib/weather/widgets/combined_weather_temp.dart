@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
-import '../../constants/enums.dart';
+import '../../constants/constants.dart';
 import '../models/models.dart' as model;
 
 class CombinedWeatherTemperature extends StatelessWidget {
